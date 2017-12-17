@@ -2,7 +2,6 @@ class UserController < ApplicationController
    skip_before_filter :verify_authenticity_token
 
    def searchaction
-    #@book=@books1
     @list=Category.all
      puts "User HOME"
           @id=session[:userid]
