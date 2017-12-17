@@ -1,0 +1,111 @@
+<html>
+	<head>
+	<title>Add Book</title>
+			<style>
+		
+#signin, #signup {
+display:inline-block;
+/**other codes**/
+}
+body {
+   background-image: url("/img/HomeBG.jpg");
+}
+	</style>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+	<link rel="stylesheet" href="/css/dropdown.css">
+	<link rel="stylesheet" href="/css/uploadimg.css">
+	<script type="text/javascript" src="/js/fileread.js"></script>
+	<script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+		    document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+		  if (!event.target.matches('.dropbtn')) {
+
+		    var dropdowns = document.getElementsByClassName("dropdown-content");
+		    var i;
+		    for (i = 0; i < dropdowns.length; i++) {
+		      var openDropdown = dropdowns[i];
+		      if (openDropdown.classList.contains('show')) {
+		        openDropdown.classList.remove('show');
+		      }
+		    }
+		  }
+		}
+	</script>
+
+	</head>
+	<body>
+	<div style="float:right">
+					<hr/>
+					<br/>
+					<a href="/admin/profile">Profile</a>
+					<a href="/admin/home">Home</a>
+					<a href="/home/home">Signout</a>
+					<hr/>
+				</div>
+<center>
+<hr/>
+<h2><b>Update book</b></h2>
+<hr/>
+			<form method="post" action="updatebookaction">
+			
+			<div class="container">
+				 <div class="group">      
+				      <input type="text" name="name" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Name</label>
+				 </div>
+				  
+				 <div class="group">      
+				      <input type="text" name="author">
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Author</label>
+				 </div>
+
+				 Category
+				<select class="dropdown" name="category">
+				  <option value="" >-- Select one --</option>
+				  <option value="science">Science</option>
+				  <option value="litrature">Litrature</option>
+				  <option value="computer">Computer</option>
+				</select>
+				<br/>
+				<br/>
+				<hr/>
+				Upload image file
+				<div class="drop" >Drag'n'Drop File Here</div>
+<div class="list"></div>
+<div class="status"></div>
+
+<input type="file" name="picture" id="cycleDocument" class="" tabindex="" />
+
+<hr/>
+
+<hr/>
+Upload book in pdf format
+				<div class="drop">Drag'n'Drop File Here</div>
+					<div class="list"></div>
+					<div class="status"></div>
+
+					<input type="file" name="file" id="cycleDocument" class="" tabindex="" />
+
+				<hr/>
+
+		<input type="submit" id="addbuttom" class="button" name="addbook" value="Update Book" />
+</div>
+				  </div>
+
+				  <div style="text-align: center;">
+	
+				 
+			</form>
+			 </center>				
+	</body>
+</html>

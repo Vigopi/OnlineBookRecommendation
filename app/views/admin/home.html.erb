@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+<!--<style>
+	#addbook , #addcategory {
+display:inline-block;
+/**other codes**/
+}
+</style>-->
+<style type="text/css">
+	.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+</style>
+</head>
+<body>
+<center>
+<br/>
+<hr/>
+<h1>Administrator home</h1>
+<hr/>
+<input type="button" id="addbook" class="button" name="addbook" value="Add book" onclick="location.href = '/admin/addbook';" />
+<br/>
+<input type="button" id="removebook" class="button" name="removebook" value="Remove book" onclick="location.href = '/admin/removebook';" />
+<br/>
+<input type="button" id="updatebook" class="button" name="updatebook" value="Update book" onclick="location.href = '/admin/updatebook';" />
+<br/>
+<input type="button" id="viewbook" class="button" name="viewbook" value="View book" onclick="location.href = '/admin/viewbook';" />
+<br/>
+<input type="button" id="addcategory" class="button" name="addcategory" value="Add Category" onclick="location.href = '/admin/addcategory';" />
+<br/>
+<input type="button" id="logout" class="button" name="signout" value="Signout" onclick="location.href = '/home/signout';" />
+<br/>
+</center>
+</body>
+</html>

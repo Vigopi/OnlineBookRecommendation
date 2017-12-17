@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+}
+.avatar {
+  width: 10em;
+  height: 10em;
+  background: #444;
+  margin: .5em auto;
+  position: relative;
+}
+.avatar input {
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide the button */
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: .8em;
+  position: absolute;
+  top: 30%;
+}

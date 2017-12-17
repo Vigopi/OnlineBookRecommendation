@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Books</title>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+	<link rel="stylesheet" href="/css/searchbox.css">
+	<link rel="stylesheet" href="/css/gridlist.css">
+	 <style>
+	.vl {
+    border-left: 6px solid orange;
+    
+    height: 900px;
+    position: absolute;
+    left: 15%;
+    margin-left: -3px;
+    top: 0;
+}
+	</style>
+
+</head>
+<body>
+<div style="float:right; width:80%; margin-left:20px;">
+			<div style="float:right">
+				<hr/>
+				<div style="float:right">
+					<hr/>
+					<br/>
+					<b>Welcome </b><%= @username %>
+					<a href="/admin/profile">Profile</a>
+					<a href="/admin/home">Home</a>
+					<a href="/home/home">Signout</a>
+					<hr/>
+				</div>
+			</div>
+			<hr/>
+			<ol>
+			
+			 <% for i in @books %>
+			 	
+			 	<br/>
+		 		<hr/>
+		 		<li>
+			 	<%= i.name %><nbsp><nbsp>
+			 	<%= i.author %>
+			 	<%= i.category %>
+			 	</li>
+			 	<hr/>
+			 	<br/>
+			 	
+			 <% end %>
+
+			 </ol>
+			
+			<center><%= will_paginate @books %></center>
+			
+
+	<div>
+
+</body>
+</html>

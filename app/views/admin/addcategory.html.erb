@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<title>Add category</title>
+			<style>
+		
+#signin, #signup {
+display:inline-block;
+/**other codes**/
+}
+body {
+   background-image: url("/img/HomeBG.jpg");
+}
+	</style>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+
+	</head>
+	<body>
+	<div style="float:right">
+					<hr/>
+					<br/>
+					<a href="/admin/profile">Profile</a>
+					<a href="/admin/home">Home</a>
+					<a href="/home/home">Signout</a>
+					<hr/>
+				</div>
+			<form id="f3" method="post" action="addcategoryaction">
+			<center>
+			<hr/>
+			<h1>Add Category</h1>
+			<hr/>
+			<div class="container">
+				 <div class="group">      
+				      <input type="text" name="name" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Enter the category to add: </label>
+				 </div>			    
+				    <div class="container">
+   
+	<input type="submit" id="addcategory" class="button" name="addcategory" value="Add category"/>
+				   <!-- <input type="submit" id="signup" class="button" name="signup" value="Signup" />-->
+</div>
+				  </div>
+
+				  <div style="text-align: center;">
+	
+				  </center>
+			</form>				
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Home</title>
+	<style>
+		
+#signin, #signup {
+display:inline-block;
+/**other codes**/
+}
+body {
+   background-image: url("/img/HomeBG.jpg");
+}
+	</style>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+</head>
+<body background="/img/HomeBG.jpg">
+<center>
+<div style="border-color:#f4511e">
+	<br/>
+	<br/>
+	<br/>
+	<hr style="color:#f4511e"/>
+
+	<h1><b>Explore the pages</b></h1>
+  <hr style="color:#f4511e"/>
+		<br/>
+	<br/>
+	</div>
+  <img src="/img/login.png" width="50" height="50">
+  <div>
+      <%= @msg %>
+    </div>
+  <div >
+  <form method="post" action="/home/signin">
+    <div class="container">
+    <div class="group">      
+      <input type="text" name="username" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>User name</label>
+    </div>
+      
+    <div class="group">      
+      <input type="password" name="password" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+    </div>
+    
+    <div style="text-align: center;">
+	<input type="submit" id="signin" class="button" value="Signin"/>
+	<input type="button" id="signup" class="button" name="signup" value="Signup" onclick="location.href = '/home/signup';" />
+</div>
+</div>
+  </form>
+  </div>
+   <div style="border-style: solid;border-color:#f4511e ">
+      <p>Explore the pages</p>
+     
+   </div>   
+
+</center>
+
+
+	
+
+   
+
+</body>
+</html>

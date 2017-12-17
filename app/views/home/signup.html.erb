@@ -1,0 +1,73 @@
+<html>
+	<head>
+	<title>Signup</title>
+			<style>
+		
+#signin, #signup {
+display:inline-block;
+/**other codes**/
+}
+body {
+   background-image: url("/img/HomeBG.jpg");
+}
+	</style>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+
+	</head>
+	<body>
+			<form id="f2" method="post" action="signupaction">
+			<center>
+			<hr/>
+
+			<h1>
+			<div>Sign up
+			<img src="/img/signup.png" width="50" height="50">
+			</div></h1>
+			<hr/>
+			<div class="container">
+				 <div class="group">      
+				      <input type="text" name="name" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Name</label>
+				 </div>
+				  
+				 <div class="group">      
+				      <input type="email" name="email" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Email Id</label>
+				 </div>
+				 
+				 <div class="group">      
+				      <input type="tel" name="mobile" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Mobile</label>
+				 </div>
+
+				 <div class="group">      
+				      <input type="text" name="username" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Username</label>
+				 </div>
+
+				    <div class="group">      
+				      <input type="password" name="password" required>
+				      <span class="highlight"></span>
+				      <span class="bar"></span>
+				      <label>Password</label>
+				    </div>
+				    <div style="border-style: solid;border-color:orange; align:left ">
+				    	Interested category
+				    	<%for i in @list %>
+				    		<input type="radio" name="category" value=<%= i %>><%= i %>
+				    		<br/>
+				    	<% end %>
+				    </div>
+<input type="submit" id="signup" class="button" name="signup" value="Signup" onclick="location.href = '/home/home';" />
+				  </center>
+			</form>				
+	</body>
+</html>
