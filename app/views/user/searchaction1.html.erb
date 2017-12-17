@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User home</title>
+	<link rel="stylesheet" href="/css/materialDesign.css">
+	<link rel="stylesheet" href="/css/searchbox.css">
+	<link rel="stylesheet" href="/css/gridlist.css">
+	 <style>
+	.vl {
+    border-left: 6px solid orange;
+    
+    height: 900px;
+    position: absolute;
+    left: 15%;
+    margin-left: -3px;
+    top: 0;
+}
+	</style>
+
+</head>
+<body>
+
+	<div style="width:100%;"> <!-- Main Div -->
+		<div class="vl" style="position: fixed;"></div> 
+		<div style="float:left; width:20%;margin-left:20px;position: absolute;">
+		 <!-- Set Div As your requirement -->
+			<div style="position: fixed;"> 
+			    Categories
+			    <ul class="grid" style="list-style: none;">
+			    	<%for c in @list %>
+			        <li>
+			        	<form action="home" method="post">
+
+			        		<input type="hidden" name="category" value=<%=c.name%> >
+							<input type="submit" name="submit" class="smallbutton"  value=<%=c.name%>>
+			        	</form>
+			        </li>
+			        <%end%>
+			    </ul>
+			</div>   
+		</div>
+		<div style="float:right; width:80%; margin-left:20px;">
+			<div style="float:right">
+				<hr/>
+				<div style="float:right">
+					<hr/>
+					<br/>
+					<b>Welcome </b><%= @username %>
+					<a href="/user/profile">Profile</a>
+					<a href="/user/home">Home</a>
+					<a href="/home/home">Signout</a>
+					<hr/>
+				</div>
+			</div>
+			<hr/>
+			<br/>
+			<form class="form-wrapper" action="search">
+				<input type="text" name="search" id="search" placeholder="Search for favorite books" required>
+				<input type="submit" value="go" id="submit">
+			</form>
+			<br/>
+			<hr/>
+			<center><h2><%= @cat %></h2></center>
+			<div id="container">    
+			    <ul class="grid">
+			   		<% count=0
+			   		for book1 in @book 
+			   			@p="/img/"+book1.picture
+			   			@file="/books/"+book1.file
+			   			if count==3
+
+			   			%>
+			   			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			   			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			   			<% end 
+			   			count=count+1%>
+
+			        <li>
+			        	
+			        	<form action="book" method="post">
+			        	<input type="hidden" name="picture" value=<%= @p %>>
+			        	<input type="hidden" name="name" value=<%= book1.name %>>
+			        	<input type="hidden" name="file" value=<%= @file %>>
+			        	<button type="submit" value="Submit" class="imgbutton">
+					        <figure>
+					        	<%= image_tag(@p,height: '300', width: '200') do %>
+					        	<%= content_tag(:p, "Your link text here")%>
+					        	<% end %>
+					        	<figcaption><%= book1.name %></figcaption>
+					        </figure>
+					        </button>
+					        </form>
+			        	
+			        </li>
+			        <% end %>
+			    </ul>
+			</div>    
+			
+		</div>
+
+	<div>
+
+</body>
+</html>

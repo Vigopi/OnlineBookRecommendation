@@ -1,5 +1,7 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User home</title>
 	<link rel="stylesheet" href="/css/materialDesign.css">
 	<link rel="stylesheet" href="/css/searchbox.css">
 	<link rel="stylesheet" href="/css/gridlist.css">
@@ -59,12 +61,10 @@
 			<br/>
 			<hr/>
 			<center><h2><%= @cat %></h2></center>
-		
 			<div id="container">    
 			    <ul class="grid">
 			   		<% count=0
-			   		for b in @books1
-			   			book1=Book.find_by_name(b)
+			   		for book1 in @book 
 			   			@p="/img/"+book1.picture
 			   			@file="/books/"+book1.file
 			   			if count==3
@@ -99,3 +99,6 @@
 		</div>
 
 	<div>
+
+</body>
+</html>
